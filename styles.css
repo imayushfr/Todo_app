@@ -16,12 +16,9 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 24px 0;
   flex-wrap: wrap;
-}
-header svg {
-  margin-left: auto;
 }
 
 form {
@@ -31,7 +28,7 @@ form {
   justify-content: center;
 }
 
-input {
+#todo-input {
   background-color: hsl(235, 24%, 19%);
   border: 1px solid hsl(235, 24%, 19%);
   border-radius: 4px;
@@ -41,7 +38,7 @@ input {
   caret-color: hsl(220, 98%, 61%);
   font-size: 1.2rem;
 }
-input:focus {
+#todo-input:focus {
   outline: none;
   border: 1px solid hsl(220, 98%, 61%);
 }
@@ -64,11 +61,11 @@ input:focus {
   background-color: hsl(220, 98%, 61%);
 }
 
-ul {
+div {
   background-color: hsl(235, 24%, 19%);
   margin: 24px 0;
   border-radius: 4px;
-  padding: 0 8px 8px;
+  padding: 8px;
 }
 
 li {
@@ -79,6 +76,16 @@ li {
 }
 li p {
   margin: 0 12px;
+}
+
+li.dragging {
+  opacity: 0.8;
+  cursor: grabbing;
+}
+
+li.drag-over {
+  border: 3px solid hsl(220, 98%, 61%);
+  transform: translateY(-2px);
 }
 
 .custom-checkbox {
@@ -112,4 +119,70 @@ input[type=checkbox]:checked ~ p {
 
 input[type=checkbox] {
   display: none;
+}
+
+.todo_text {
+  cursor: pointer;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#footer h5 {
+  color: hsl(233, 11%, 52%);
+}
+#footer div {
+  display: flex;
+  gap: 20px;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  color: hsl(233, 11%, 52%);
+  font: inherit;
+  cursor: pointer;
+  transition: 200ms ease;
+}
+.filter-btn:hover {
+  color: hsl(220, 98%, 61%);
+}
+
+.filter-btn.active {
+  color: hsl(220, 98%, 61%);
+}
+
+#clear-btn {
+  background: none;
+  border: none;
+  color: hsl(233, 11%, 52%);
+  font: inherit;
+  cursor: pointer;
+  transition: 200ms ease;
+}
+#clear-btn:hover {
+  color: hsl(220, 98%, 61%);
+}
+
+#bottom {
+  text-align: center;
+  color: hsl(233, 11%, 52%);
+}
+
+.edit_input {
+  background-color: transparent;
+  border: none;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  border-bottom: 1px solid hsl(220, 98%, 61%);
+}
+
+@media (max-width: 440px) {
+  #footer {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=styles.css.map */

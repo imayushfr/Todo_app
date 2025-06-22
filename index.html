@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
   <link href="styles.css" rel="stylesheet">
   <script src="script.js" defer></script>
   
@@ -16,8 +16,6 @@
 
   <header>
     <h1>T O D O</h1>
-    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path fill="#FFF" fill-rule="evenodd" d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"/>
-    </svg>
   </header>
 
   <form>
@@ -25,31 +23,26 @@
     <button id="add-btn" type="submit">Add task</button>
   </form>
 
-  <ul id="todo-list">
-    <li class="todo">
-      <input type="checkbox" id="todo-1">
-      <label class="custom-checkbox" for="todo-1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9"><path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6"/>
-        </svg>
-      </label>
-      <p>Todo</p>
-      <button class="dlt-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/>
-        </svg>
-      </button>
-    </li>
-  </ul>
+  <div> 
+    <ul id="todo-list"></ul>
 
-  <footer>
-    <h5>5 items left</h5>
-    <ul>
-      <li>All</li>
-      <li>Active</li>
-      <li>Completed</li>
-    </ul>
-    <button>Clear Completed</button>
+    <footer>
+      <div id="footer">
+        <h5 id="items-left">0 items left</h5>
 
-  <h5>Drag and drop to reorder list</h5>
+        <div>
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <button id="clear-btn">Clear Completed</button>
+      </div>
+
+    </footer>
+  </div>
+
+  <h5 id="bottom">Drag and drop to reorder list</h5>
 
 </body>
 </html>

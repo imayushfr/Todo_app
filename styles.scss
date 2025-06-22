@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: hsl(235, 21%, 11%);
+    color: white;
+    padding: 1rem;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+    flex-wrap: wrap;
+}
+
+form{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#todo-input{
+    background-color: hsl(235, 24%, 19%);
+    border: 1px solid hsl(235, 24%, 19%);
+    border-radius: 4px;
+    padding: 12px 20px;
+    font: inherit;
+    color: hsl(234, 39%, 85%);
+    caret-color: hsl(220, 98%, 61%);
+    font-size: 1.2rem;
+    
+    &:focus{
+        outline: none;
+        border: 1px solid hsl(220, 98%, 61%);
+    }
+}
+
+#add-btn{
+    background-color: #0354F6;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    color: white;
+    font: inherit;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover{
+        background-color: hsl(220, 98%, 61%);
+    }
+}
+
+div{
+    background-color: hsl(235, 24%, 19%);
+    margin: 24px 0;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid hsl(234, 11%, 52%);
+    padding: 8px 0;
+
+    p{
+        margin: 0 12px;
+    }
+}
+
+li.dragging{
+    opacity: 0.8;
+    cursor: grabbing;
+}
+
+li.drag-over{
+    border: 3px solid hsl(220, 98%, 61%);
+    transform: translateY(-2px);
+}
+
+.custom-checkbox{
+    border: 2px solid hsl(280, 87%, 65%);
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms ease;
+    cursor: pointer;
+}
+
+.dlt-btn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px; 
+    margin-left: auto; 
+}
+
+input[type=checkbox]:checked ~ .custom-checkbox{
+    background-color: hsl(280, 87%, 65%);
+}
+
+input[type=checkbox]:checked ~ p{
+    text-decoration: line-through;
+    color: hsl(234, 11%, 52%);
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+.todo_text {
+    cursor: pointer;
+}
+
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    h5{
+        color: hsl(233, 11%, 52%);
+    }
+
+    div{
+        display: flex;
+        gap: 20px;
+    }
+}
+
+.filter-btn{
+    background: none;
+    border: none;
+    color: hsl(233, 11%, 52%);
+    font: inherit;
+    cursor: pointer;
+    transition: 200ms ease;
+
+    &:hover{
+        color: hsl(220, 98%, 61%);
+    }
+}
+
+.filter-btn.active{
+    color: hsl(220, 98%, 61%);
+}
+
+#clear-btn{
+    background: none;
+    border: none;
+    color: hsl(233, 11%, 52%);
+    font: inherit;
+    cursor: pointer;
+    transition: 200ms ease;
+
+    &:hover{
+        color: hsl(220, 98%, 61%);
+    }
+}
+
+#bottom{
+    text-align: center;
+    color:hsl(233, 11%, 52%);
+}
+
+.edit_input {
+    background-color: transparent;
+    border: none;
+    font: inherit;
+    color: inherit;
+    outline: none;
+    border-bottom: 1px solid hsl(220, 98%, 61%);
+}
+
+@media (max-width: 440px){
+    #footer{
+        flex-direction: column;
+    }
+}
